@@ -1,8 +1,4 @@
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0) [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
-[![Download](https://api.bintray.com/packages/kelvin/maven/rxfirebase/images/download.svg) ](https://bintray.com/kelvin/maven/rxfirebase/_latestVersion)
-[![Build Status](https://img.shields.io/badge/Android%20Arsenal-rxFirebase-green.svg?style=true)](https://android-arsenal.com/details/1/3619)
-[![Build Status](https://circleci.com/gh/nmoskalenko/RxFirebase/tree/master.svg?style=shield)](https://circleci.com/gh/nmoskalenko/RxFirebase/tree/master)
-[![codecov](https://codecov.io/gh/nmoskalenko/rxFirebase/branch/master/graph/badge.svg)](https://codecov.io/gh/nmoskalenko/rxFirebase)
 
 # RxFirebase 2
 
@@ -101,21 +97,45 @@ RxFirebaseStorage.getBytes(storageRef.child("README.md"), 1024 * 100)
 ## Download
 
 ##### Gradle:
+Step 1. Add the JitPack repository to your build file (root `build.gradle` file)
+
+```groovy
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+Step 2. Add the RxFirebase dependency along with the needed Firebase dependencies
 ```groovy
 dependencies {
   compile 'com.google.firebase:firebase-auth:10.0.1'
   compile 'com.google.firebase:firebase-database:10.0.1'
   compile 'com.google.firebase:firebase-storage:10.0.1'
-  compile 'com.kelvinapps:rxfirebase:0.0.15'
+  compile 'com.github.ariskou:rxfirebase:master-SNAPSHOT'
 }
 ```
 
 ##### Maven:
+Step 1. Add the JitPack repository to your pom file
+
+```
+<repositories>
+  <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+```
+
+Step 2. Add the RxFirebase dependency
 ```
 <dependency>
-  <groupId>com.kelvinapps</groupId>
+  <groupId>com.github.ariskou</groupId>
   <artifactId>rxfirebase</artifactId>
-  <version>0.0.15</version>
+  <version>master-SNAPSHOT</version>
   <type>pom</type>
 </dependency>
 ```
